@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Look Amy's haircut</title>
+</head>
+<body>
+    <h1>Look Amy's haircut</h1>
+    <p>Your convenience is our duty</p>
+
+    <h2>Here are all our items!</h2>
+
+    <!-- Item 1 -->
+    <p>.: ...</p>
+    <img src="http://cdn.arn.com.au/media/7607343/hair-salon-introduces-a-quiet-chair.jpeg">
+    <br>
+
+    <!-- Item 2 -->
+    <p>.: ...</p>
+    <img src="http://www.reviewtrackers.com/wp-content/uploads/Hair-Salon-Review-Monitoring.jpg">
+
+    <!-- Item 3 -->
+    <p>.: ...</p>
+    <img src="https://media.timeout.com/images/103251392/image.jpg">
+
+    <!-- Order Form -->
+    <h2>Place your Order</h2>
+    <form action="{% url 'haircut:home_page' %}" method="POST">
+        {% csrf_token %}    
+        <input type="time" name="time" placeholder="Please Type the time"><br>
+        <textarea name="customer name" placeholder="Please Type Your customer name"></textarea><br>
+        <input type="submit" value="Place Your Order">
+    </form>
+
+    <!-- Show Order -->
+    <h1>Your Order:</h1>
+    <p>time: {{time}}</p>
+    <p>customer_name: {{customer_name}}</p>
+
+</body>
+</html>
